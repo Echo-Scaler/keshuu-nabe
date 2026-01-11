@@ -51,6 +51,10 @@
             transition: transform 0.5s ease;
         }
 
+        .img-zoom:hover {
+            transform: scale(1.03);
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -70,61 +74,66 @@
 </head>
 
 <body class="bg-charcoal font-serif">
-    <!-- Flyer Container - A4 ratio optimized (approx 595px for 72dpi, 794px for 96dpi) -->
+    <!-- Responsive Flyer Container -->
     <div
-        class="relative w-full max-w-[794px] mx-auto min-h-[1123px] bg-charcoal overflow-hidden shadow-none border-none">
+        class="relative w-full max-w-screen-lg mx-auto bg-charcoal overflow-hidden shadow-none border-none px-4 sm:px-6 lg:px-12 py-8">
 
-        <!-- Background Image (Image 11) -->
+        <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="./../Image (11).jpeg" alt="Restaurant interior"
                 class="w-full h-full object-cover brightness-[0.2]">
             <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
         </div>
 
-        <div class="relative z-10 p-12">
+        <div class="relative z-10">
             <!-- Top accent line -->
             <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent">
             </div>
 
             <!-- Header Section -->
-            <header class="relative pt-8 pb-8 fade-in">
-                <div class="absolute -top-4 -right-4 w-24 h-24 border border-gold/20 rotate-45"></div>
+            <header class="relative pt-8 pb-6 fade-in">
+                <div class="absolute -top-4 -right-4 w-16 h-16 md:w-24 md:h-24 border border-gold/20 rotate-45"></div>
 
-                <p class="font-display text-gold text-lg font-bold tracking-[0.4em] uppercase mb-4">Nishi-Nakasu,
+                <p class="font-display text-gold text-sm md:text-lg font-bold tracking-[0.35em] uppercase mb-3">
+                    Nishi-Nakasu,
                     Fukuoka</p>
-                <h1 class="text-gold text-5xl font-bold leading-tight mb-3">西中洲の奥に佇む</h1>
-                <h2 class="text-white text-6xl font-extrabold tracking-widest">上質なもつ鍋処</h2>
-                <p class="font-display text-gold/70 text-xl italic mt-6 tracking-wide">A Refined Motsunabe Experience
+                <h1 class="text-gold text-2xl sm:text-3xl md:text-5xl font-bold leading-tight mb-2">西中洲の奥に佇む</h1>
+                <h2 class="text-white text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-widest">上質なもつ鍋処</h2>
+                <p class="font-display text-gold/70 text-sm md:text-xl italic mt-4 tracking-wide">A Refined Motsunabe
+                    Experience
                 </p>
             </header>
 
-            <!-- Main Visual Grid (Image 16, 14, 13) -->
-            <section class="py-10">
-                <div class="grid grid-cols-3 gap-6 items-stretch">
+            <!-- Main Visual Grid -->
+            <section class="py-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
                     <!-- Main Image -->
-                    <div class="col-span-2 relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-                        <img src="./../Image (16).jpeg" class="w-full h-[450px] object-cover">
-                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/90 p-8">
-                            <h4 class="text-cream text-2xl font-medium tracking-widest leading-none mb-1">もつ鍋 — 塩テール味
+                    <div
+                        class="md:col-span-2 col-span-1 relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                        <img src="./../Image (16).jpeg" class="w-full h-64 md:h-[450px] object-cover img-zoom">
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/90 p-4 md:p-8">
+                            <h4 class="text-cream text-lg md:text-2xl font-medium tracking-widest leading-none mb-1">もつ鍋
+                                — 塩テール味
                             </h4>
-                            <p class="text-gold text-sm font-display italic">Signature Rich Oxtail Salt Broth</p>
+                            <p class="text-gold text-xs md:text-sm font-display italic">Signature Rich Oxtail Salt Broth
+                            </p>
                         </div>
                         <div
-                            class="absolute top-6 left-6 px-4 py-1 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-bold uppercase tracking-widest">
+                            class="absolute top-4 md:top-6 left-4 md:left-6 px-3 py-1 rounded-full bg-gold/20 border border-gold/40 text-gold text-[10px] md:text-xs font-bold uppercase tracking-widest">
                             Recommended</div>
                     </div>
 
                     <!-- Side Images -->
                     <div class="flex flex-col gap-6">
                         <div class="relative flex-1 rounded-2xl overflow-hidden border border-gold/20 bg-warmgray/40">
-                            <img src="./../Image (14).jpeg" class="w-full h-40 object-cover">
+                            <img src="./../Image (14).jpeg" class="w-full h-40 md:h-40 object-cover img-zoom">
                             <div class="p-3">
                                 <h5 class="text-cream text-sm tracking-widest">牛テール塩焼き</h5>
                                 <p class="text-gold/70 text-[10px] italic font-display">Grilled Oxtail</p>
                             </div>
                         </div>
                         <div class="relative flex-1 rounded-2xl overflow-hidden border border-gold/20 bg-warmgray/40">
-                            <img src="./../Image (13).jpeg" class="w-full h-40 object-cover">
+                            <img src="./../Image (13).jpeg" class="w-full h-40 md:h-40 object-cover img-zoom">
                             <div class="p-3">
                                 <h5 class="text-cream text-sm tracking-widest">季節の前菜</h5>
                                 <p class="text-gold/70 text-[10px] italic font-display">Seasonal Small Plates</p>
@@ -135,31 +144,34 @@
             </section>
 
             <!-- Description -->
-            <section class="py-8 flex gap-8">
-                <div class="text-vertical text-gold/50 text-xs tracking-[0.5em] h-32 pt-2 border-r border-gold/20 pr-4">
-                    慶州 西中洲店</div>
-                <div class="flex-1 space-y-6">
-                    <p class="text-cream/90 text-lg leading-loose tracking-widest">
+            <section class="py-6 flex flex-col md:flex-row md:gap-8">
+                <div
+                    class="hidden md:block text-vertical text-gold/50 text-xs tracking-[0.5em] h-32 pt-2 border-r border-gold/20 pr-4">
+                    慶州 西中洲店
+                </div>
+                <div class="flex-1 space-y-4">
+                    <p class="text-cream/90 text-base md:text-lg leading-loose tracking-widest">
                         牛テールの旨みを凝縮した、当店一番人気の塩テール味もつ鍋。<br>
                         落ち着いた和の空間で、都会の喧騒を忘れるひとときをお過ごしください。
                     </p>
-                    <p class="font-display text-gold/80 text-lg italic leading-relaxed">
-                        Experience the depth of our oxtail umami in a sophisticated, <br>intimate setting perfect for
+                    <p class="font-display text-gold/80 text-base md:text-lg italic leading-relaxed">
+                        Experience the depth of our oxtail umami in a sophisticated, intimate setting perfect for
                         business or celebration.
                     </p>
                 </div>
             </section>
 
-            <!-- Bottom Section (Image 12 & Contact) -->
-            <section class="pt-12 pb-8 mt-4 border-t border-gold/20">
-                <div class="grid grid-cols-3 gap-10 items-center">
-                    <div class="col-span-2 space-y-8">
+            <!-- Bottom Section (Image & Contact) -->
+            <section class="pt-8 pb-6 mt-4 border-t border-gold/20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-2 space-y-6">
                         <div>
-                            <h2 class="text-cream text-4xl font-semibold tracking-[0.3em] mb-2 uppercase">もつ鍋 慶州</h2>
-                            <p class="text-gold text-xl tracking-[0.5em] font-light">西中洲店</p>
+                            <h2 class="text-cream text-2xl md:text-4xl font-semibold tracking-[0.25em] mb-1 uppercase">
+                                もつ鍋 慶州</h2>
+                            <p class="text-gold text-lg md:text-xl tracking-[0.4em] font-light">西中洲店</p>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="space-y-1">
                                 <p class="text-gold/60 text-xs uppercase tracking-widest font-display">Address</p>
                                 <p class="text-cream text-sm leading-relaxed">福岡市中央区西中洲 2丁目17番地</p>
@@ -170,21 +182,21 @@
                             </div>
                         </div>
 
-                        <div class="inline-block border border-gold/40 rounded-xl px-8 py-4 bg-gold/5">
-                            <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-1 font-display">Reservations
+                        <div class="inline-block border border-gold/40 rounded-xl px-6 py-3 bg-gold/5 mt-2">
+                            <p class="text-gold/60 text-xs uppercase tracking-[0.25em] mb-1 font-display">Reservations
                             </p>
-                            <p class="text-cream text-4xl tracking-widest font-light">092-739-8245</p>
+                            <p class="text-cream text-2xl md:text-4xl tracking-widest font-light">092-739-8245</p>
                         </div>
 
                         <p class="text-gold/50 text-sm tracking-widest italic font-display">English-friendly menu
                             available</p>
                     </div>
 
-                    <div class="col-span-1">
+                    <div class="md:col-span-1">
                         <div class="aspect-[3/4] rounded-2xl overflow-hidden border-2 border-gold/20 shadow-2xl">
-                            <img src="./../Image (12).jpeg" class="w-full h-full object-cover">
+                            <img src="./../Image (12).jpeg" class="w-full h-full object-cover img-zoom">
                         </div>
-                        <p class="text-center text-gold/40 text-[10px] uppercase tracking-widest mt-4">The Entrance</p>
+                        <p class="text-center text-gold/40 text-[10px] uppercase tracking-widest mt-3">The Entrance</p>
                     </div>
                 </div>
             </section>
@@ -194,8 +206,8 @@
         <!-- Decorative Bottom accents -->
         <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent">
         </div>
-        <div class="absolute bottom-6 left-6 w-12 h-12 border-l border-b border-gold/30"></div>
-        <div class="absolute bottom-6 right-6 w-12 h-12 border-r border-b border-gold/30"></div>
+        <div class="absolute bottom-6 left-6 w-12 h-12 border-l border-b border-gold/30 hidden sm:block"></div>
+        <div class="absolute bottom-6 right-6 w-12 h-12 border-r border-b border-gold/30 hidden sm:block"></div>
     </div>
 </body>
 
